@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.tekosc.TekOsc-20221017150735" tests="7" file="tests/tekosc.py" time="9.108" timestamp="2022-10-17T15:07:51" failures="0" errors="0" skipped="0">
+	<testcase classname="tests.tekosc.TekOsc" name="test_GIVEN_nothing_WHEN_curve_queried_THEN_correct_curve_returned" time="6.274" timestamp="2022-10-17T15:07:48" file="system_tests\tests\tekosc.py" line="37"/>
+	<testcase classname="tests.tekosc.TekOsc" name="test_GIVEN_nothing_WHEN_get_identity_THEN_identity_returned" time="0.407" timestamp="2022-10-17T15:07:49" file="system_tests\tests\tekosc.py" line="32"/>
+	<testcase classname="tests.tekosc.TekOsc" name="test_GIVEN_nothing_when_units_requested_THEN_correct_units_returned" time="0.590" timestamp="2022-10-17T15:07:49" file="system_tests\tests\tekosc.py" line="70"/>
+	<testcase classname="tests.tekosc.TekOsc" name="test_GIVEN_nothing_when_xinc_requested_THEN_correct_unit_returned" time="0.461" timestamp="2022-10-17T15:07:50" file="system_tests\tests\tekosc.py" line="48"/>
+	<testcase classname="tests.tekosc.TekOsc" name="test_GIVEN_nothing_when_xzero_requested_THEN_correct_xzeros_returned" time="0.465" timestamp="2022-10-17T15:07:50" file="system_tests\tests\tekosc.py" line="83"/>
+	<testcase classname="tests.tekosc.TekOsc" name="test_GIVEN_nothing_when_ymult_requested_THEN_correct_multiplier_returned" time="0.446" timestamp="2022-10-17T15:07:51" file="system_tests\tests\tekosc.py" line="59"/>
+	<testcase classname="tests.tekosc.TekOsc" name="test_GIVEN_nothing_when_yzero_requested_THEN_correct_yzeros_returned" time="0.465" timestamp="2022-10-17T15:07:51" file="system_tests\tests\tekosc.py" line="94"/>
+</testsuite>
