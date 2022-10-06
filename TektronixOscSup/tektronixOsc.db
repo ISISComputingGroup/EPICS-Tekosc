@@ -73,6 +73,22 @@ record(stringin,"$(P):YUNIT_CH1")
     field(DESC, "get y unit of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYUNIT(1) $(PORT)")
+    field(FLNK, "$(P):XZERO_CH1")
+}
+
+record(ai,"$(P):XZERO_CH1")
+{
+    field(DESC, "get x zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXZERO(1) $(PORT)")
+    field(FLNK, "$(P):YZERO_CH1")
+}
+
+record(ai,"$(P):YZERO_CH1")
+{
+    field(DESC, "get y zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYZERO(1) $(PORT)")
 }
 
 record(waveform,"$(P):RAWYDATA_CH2")
@@ -116,7 +132,25 @@ record(stringin,"$(P):YUNIT_CH2")
     field(DESC, "get y unit of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYUNIT(2) $(PORT)")
+    field(FLNK, "$(P):XZERO_CH2")
 }
+
+record(ai,"$(P):XZERO_CH2")
+{
+    field(DESC, "get x zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXZERO(2) $(PORT)")
+    field(FLNK, "$(P):YZERO_CH2")
+}
+
+record(ai,"$(P):YZERO_CH2")
+{
+    field(DESC, "get y zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYZERO(2) $(PORT)")
+}
+
+
 
 record(waveform, "$(P):RAWYDATA_CH3")
 {
@@ -159,6 +193,22 @@ record(stringin,"$(P):YUNIT_CH3")
     field(DESC, "get y unit of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYUNIT(3) $(PORT)")
+    field(FLNK, "$(P):XZERO_CH3")
+}
+
+record(ai,"$(P):XZERO_CH3")
+{
+    field(DESC, "get x zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXZERO(3) $(PORT)")
+    field(FLNK, "$(P):YZERO_CH3")
+}
+
+record(ai,"$(P):YZERO_CH3")
+{
+    field(DESC, "get y zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYZERO(3) $(PORT)")
 }
 
 record(waveform, "$(P):RAWYDATA_CH4")
@@ -202,4 +252,20 @@ record(stringin,"$(P):YUNIT_CH4")
     field(DESC, "get y unit of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYUNIT(4) $(PORT)")
+    field(FLNK, "$(P):XZERO_CH4")
+}
+
+record(ai,"$(P):XZERO_CH4")
+{
+    field(DESC, "get x zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXZERO(4) $(PORT)")
+    field(FLNK, "$(P):YZERO_CH4")
+}
+
+record(ai,"$(P):YZERO_CH4")
+{
+    field(DESC, "get y zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYZERO(4) $(PORT)")
 }

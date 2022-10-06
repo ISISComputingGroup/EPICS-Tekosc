@@ -16,10 +16,24 @@ getYDATA {
     ExtraInput = Ignore;
 }
 
+getXINC {
+    # Get x increment
+    out ":DATA:SOURCE CH\$1;:WFMOUTPRE:XINCR?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+
 getYMULT {
     # Get y multiplier
     out ":DATA:SOURCE CH\$1;:WFMOUTPRE:YMULT?";
     in "%f";
+    ExtraInput = Ignore;
+}
+
+getXUNIT {
+    # Get x unit
+    out ":DATA:SOURCE CH\$1;:WFMOUTPRE:XUNIT?";
+    in '%/([a-zA-Z]+)/';
     ExtraInput = Ignore;
 }
 
@@ -30,16 +44,16 @@ getYUNIT {
     ExtraInput = Ignore;
 }
 
-getXINC {
-    # Get x increment
-    out ":DATA:SOURCE CH\$1;:WFMOUTPRE:XINCR?";
+getXZERO {
+    # Get the X start point (0)
+    out ":DATA:SOURCE CH\$1;:WFMOUTPRE:XZERO?";
     in "%f";
     ExtraInput = Ignore;
 }
 
-getXUNIT {
-    # Get x unit
-    out ":DATA:SOURCE CH\$1;:WFMOUTPRE:XUNIT?";
-    in '%/([a-zA-Z]+)/';
+getYZERO {
+    # Get the Y start point (0)
+    out ":DATA:SOURCE CH\$1;:WFMOUTPRE:YZERO?";
+    in "%f";
     ExtraInput = Ignore;
 }
