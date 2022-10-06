@@ -1,0 +1,61 @@
+# Channel $(CHANNEL)
+
+record(waveform, "$(P):RAWYDATA_CH$(CHANNEL)")
+{
+    field(SCAN, "5 second")
+    field(DESC, "Get data points")
+    field(DTYP, "stream") 
+    field(NELM, "10000")
+    field(FTVL, "LONG")
+    field(INP,  "@tektronixOsc.proto getYDATA($(CHANNEL)) $(PORT)")
+    field(FLNK, "$(P):XINC_CH$(CHANNEL)")
+    field(SDIS, "$(P):DISABLE")
+}
+
+record(ai, "$(P):XINC_CH$(CHANNEL)")
+{
+    field(DESC, "get x increment of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXINC($(CHANNEL)) $(PORT)")
+    field(FLNK, "$(P):YMULT_CH$(CHANNEL)")
+}
+
+record(ai, "$(P):YMULT_CH$(CHANNEL)")
+{
+    field(DESC, "get y multiplier of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYMULT($(CHANNEL)) $(PORT)")
+    field(FLNK, "$(P):XUNIT_CH$(CHANNEL)")
+}
+
+record(stringin, "$(P):XUNIT_CH$(CHANNEL)")
+{
+    field(DESC, "get x unit of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXUNIT($(CHANNEL)) $(PORT)")
+    field(FLNK, "$(P):YUNIT_CH$(CHANNEL)")
+}
+
+record(stringin, "$(P):YUNIT_CH$(CHANNEL)")
+{
+    field(DESC, "get y unit of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYUNIT($(CHANNEL)) $(PORT)")
+    field(FLNK, "$(P):XZERO_CH$(CHANNEL)")
+}
+
+record(ai, "$(P):XZERO_CH$(CHANNEL)")
+{
+    field(DESC, "get x zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXZERO($(CHANNEL)) $(PORT)")
+    field(FLNK, "$(P):YZERO_CH$(CHANNEL)")
+}
+
+record(ai, "$(P):YZERO_CH$(CHANNEL)")
+{
+    field(DESC, "get y zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYZERO($(CHANNEL)) $(PORT)")
+}
+

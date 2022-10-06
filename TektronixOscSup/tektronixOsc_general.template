@@ -1,0 +1,30 @@
+# Macros in file
+# P - PV Prefix
+# PORT - Oscilloscope port
+# CHANNEL - Specific channel to query
+
+record(bo, "$(P):DISABLE") 
+{
+    field(DESC, "Disable comms")
+    field(PINI, "YES")
+    field(VAL, "0")
+    field(OMSL, "supervisory")
+    field(ZNAM, "COMMS ENABLED")
+    field(ONAM, "COMMS DISABLED")
+}
+
+# General oscilloscope commands
+
+# Short and long form of identification string
+
+record(stringin, "$(P):IDN")
+{
+    field(DESC, "SCPI identification string")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getIDN(39) $(PORT)")
+    field(PINI, "YES")
+    field(SDIS, "$(P):DISABLE")
+}
+
+# Specific Channel commands
+
