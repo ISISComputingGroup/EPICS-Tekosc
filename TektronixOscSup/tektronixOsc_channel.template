@@ -22,6 +22,7 @@ record(waveform, "$(P):RAWYDATA_CH$(CHANNEL)")
     field(FTVL, "LONG")
     field(INP,  "@tektronixOsc.proto getYDATA($(CHANNEL)) $(PORT)")
     field(SDIS, "$(P):DISABLE")
+    info(INTEREST, "HIGH")
 }
 
 record(ai, "$(P):XINC_CH$(CHANNEL)")
@@ -30,6 +31,7 @@ record(ai, "$(P):XINC_CH$(CHANNEL)")
     field(DESC, "get x increment of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getXINC($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
 }
 
 record(ai, "$(P):YMULT_CH$(CHANNEL)")
@@ -38,6 +40,7 @@ record(ai, "$(P):YMULT_CH$(CHANNEL)")
     field(DESC, "get y multiplier of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYMULT($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
 }
 
 record(stringin, "$(P):XUNIT_CH$(CHANNEL)")
@@ -46,6 +49,7 @@ record(stringin, "$(P):XUNIT_CH$(CHANNEL)")
     field(DESC, "get x unit of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getXUNIT($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
 }
 
 record(stringin, "$(P):YUNIT_CH$(CHANNEL)")
@@ -54,6 +58,7 @@ record(stringin, "$(P):YUNIT_CH$(CHANNEL)")
     field(DESC, "get y unit of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYUNIT($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
 }
 
 record(ai, "$(P):XZERO_CH$(CHANNEL)")
@@ -62,6 +67,7 @@ record(ai, "$(P):XZERO_CH$(CHANNEL)")
     field(DESC, "get x zero of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getXZERO($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
 }
 
 record(ai, "$(P):YZERO_CH$(CHANNEL)")
@@ -70,5 +76,6 @@ record(ai, "$(P):YZERO_CH$(CHANNEL)")
     field(DESC, "get y zero of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYZERO($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
 }
 
