@@ -1,0 +1,16 @@
+file tektronixOsc_general.template {
+    pattern
+        {P, PORT}
+
+        {$(P), $(PORT)}
+}
+
+file tektronixOsc_channel.template {
+    pattern
+        {P, PORT, CHANNEL}
+
+        {$(P), $(PORT), 1}
+        {$(P), $(PORT), 2}
+        {$(P), $(PORT), 3}
+        {$(P), $(PORT), 4}
+}

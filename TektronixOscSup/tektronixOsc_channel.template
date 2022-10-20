@@ -1,0 +1,81 @@
+# Channel $(CHANNEL)
+
+record(fanout, "$(P):SCAN_CH$(CHANNEL)")
+{
+    field(DESC, "Update data and preamble")
+    field(SCAN, "5 second")
+    field(LNK1, "$(P):RAWYDATA_CH$(CHANNEL)")
+    field(LNK2, "$(P):XINC_CH$(CHANNEL)")
+    field(LNK3, "$(P):YMULT_CH$(CHANNEL)")
+    field(LNK4, "$(P):XUNIT_CH$(CHANNEL)")
+    field(LNK5, "$(P):YUNIT_CH$(CHANNEL)")
+    field(LNK6, "$(P):XZERO_CH$(CHANNEL)")
+    field(LNK7, "$(P):YZERO_CH$(CHANNEL)")
+}
+
+record(waveform, "$(P):RAWYDATA_CH$(CHANNEL)")
+{
+    field(SCAN, "Passive")
+    field(DESC, "Get data points")
+    field(DTYP, "stream") 
+    field(NELM, "10000")
+    field(FTVL, "LONG")
+    field(INP,  "@tektronixOsc.proto getYDATA($(CHANNEL)) $(PORT)")
+    field(SDIS, "$(P):DISABLE")
+    info(INTEREST, "HIGH")
+}
+
+record(ai, "$(P):XINC_CH$(CHANNEL)")
+{
+    field(SCAN, "Passive")
+    field(DESC, "get x increment of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXINC($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
+}
+
+record(ai, "$(P):YMULT_CH$(CHANNEL)")
+{
+    field(SCAN, "Passive")
+    field(DESC, "get y multiplier of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYMULT($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
+}
+
+record(stringin, "$(P):XUNIT_CH$(CHANNEL)")
+{
+    field(SCAN, "Passive")
+    field(DESC, "get x unit of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXUNIT($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
+}
+
+record(stringin, "$(P):YUNIT_CH$(CHANNEL)")
+{
+    field(SCAN, "Passive")
+    field(DESC, "get y unit of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYUNIT($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
+}
+
+record(ai, "$(P):XZERO_CH$(CHANNEL)")
+{
+    field(SCAN, "Passive")
+    field(DESC, "get x zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getXZERO($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
+}
+
+record(ai, "$(P):YZERO_CH$(CHANNEL)")
+{
+    field(SCAN, "Passive")
+    field(DESC, "get y zero of plot")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getYZERO($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
+}
+
