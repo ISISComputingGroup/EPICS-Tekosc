@@ -23,6 +23,7 @@ record(waveform, "$(P):RAWYDATA_CH$(CHANNEL)")
     field(INP,  "@tektronixOsc.proto getYDATA($(CHANNEL)) $(PORT)")
     field(SDIS, "$(P):DISABLE")
     info(INTEREST, "HIGH")
+	field(EGU, "")
 }
 
 record(ai, "$(P):XINC_CH$(CHANNEL)")
@@ -31,6 +32,7 @@ record(ai, "$(P):XINC_CH$(CHANNEL)")
     field(DESC, "get x increment of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getXINC($(CHANNEL)) $(PORT)")
+	field(EGU, "")
     info(INTEREST, "HIGH")
 }
 
@@ -40,6 +42,7 @@ record(ai, "$(P):YMULT_CH$(CHANNEL)")
     field(DESC, "get y multiplier of plot")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYMULT($(CHANNEL)) $(PORT)")
+	field(EGU, "")
     info(INTEREST, "HIGH")
 }
 
@@ -68,6 +71,7 @@ record(ai, "$(P):XZERO_CH$(CHANNEL)")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getXZERO($(CHANNEL)) $(PORT)")
     info(INTEREST, "HIGH")
+	field(EGU, "")
 }
 
 record(ai, "$(P):YZERO_CH$(CHANNEL)")
@@ -77,5 +81,6 @@ record(ai, "$(P):YZERO_CH$(CHANNEL)")
     field(DTYP, "stream")
     field(INP,  "@tektronixOsc.proto getYZERO($(CHANNEL)) $(PORT)")
     info(INTEREST, "HIGH")
+	field(EGU, "")
 }
 
