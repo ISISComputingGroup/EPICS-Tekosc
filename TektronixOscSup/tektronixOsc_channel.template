@@ -3,7 +3,7 @@
 record(fanout, "$(P):SCAN_CH$(CHANNEL)")
 {
     field(DESC, "Update data and preamble")
-    field(SCAN, "5 second")
+#    field(SCAN, "5 second")
     field(LNK1, "$(P):RAWYDATA_CH$(CHANNEL)")
     field(LNK2, "$(P):XINC_CH$(CHANNEL)")
     field(LNK3, "$(P):YMULT_CH$(CHANNEL)")
@@ -84,3 +84,12 @@ record(ai, "$(P):YZERO_CH$(CHANNEL)")
 	field(EGU, "")
 }
 
+record(ai, "$(P):MEAS$(CHANNEL)")
+{
+    field(SCAN, "1 second")
+    field(DESC, "Measurement $(CHANNEL)")
+    field(DTYP, "stream")
+    field(INP,  "@tektronixOsc.proto getMeasurement($(CHANNEL)) $(PORT)")
+    info(INTEREST, "HIGH")
+	field(EGU, "")
+}
