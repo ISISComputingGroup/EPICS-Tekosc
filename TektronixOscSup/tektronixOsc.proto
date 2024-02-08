@@ -57,3 +57,12 @@ getYZERO {
     in "%f";
     ExtraInput = Ignore;
 }
+
+getMeasurement {
+    out "MEASU:MEAS\$1:VALUE?";
+	in "%f";
+    ExtraInput = Ignore;
+	@init {
+	    out "HEAD OFF";
+	}
+}
