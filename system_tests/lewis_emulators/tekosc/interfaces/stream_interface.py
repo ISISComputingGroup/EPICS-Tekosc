@@ -1,10 +1,7 @@
-from distutils.command.build import build
 from lewis.adapters.stream import StreamInterface
 from lewis.core.logging import has_log
-
 from lewis.utils.command_builder import CmdBuilder
 from lewis.utils.replies import conditional_reply
-from numpy import double
 
 if_connected = conditional_reply("connected")
 
