@@ -2,4 +2,4 @@ from ..lewis_versions import LEWIS_LATEST
 from .device import SimulatedTekOsc
 
 framework_version = LEWIS_LATEST
-__all__ = ['SimulatedTekOsc']
+__all__ = ["SimulatedTekOsc"]
