@@ -1,4 +1,5 @@
 OutTerminator = '\n';
+#InTerminator = '\n';
 ReplyTimeout = 1000;
 
 getIDN {
@@ -56,4 +57,13 @@ getYZERO {
     out ":DATA:SOURCE CH\$1;:WFMOUTPRE:YZERO?";
     in "%f";
     ExtraInput = Ignore;
+}
+
+getMeasurement {
+    out "MEASU:MEAS\$1:VALUE?";
+	in "%f";
+    ExtraInput = Ignore;
+	@init {
+	    out "HEAD OFF";
+	}
 }
