@@ -1,3 +1,8 @@
+global{
+    CHANNEL_SCAN="\$(CHANNEL_SCAN=5 second)",
+    MEASURE_SCAN="\$(MEASURE_SCAN=Passive)"
+}
+
 file tektronixOsc_general.template {
     pattern
         {P, PORT}
